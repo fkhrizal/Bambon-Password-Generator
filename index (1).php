@@ -1,26 +1,15 @@
 <?php
-		$len=8;
+	if(isset($_POST['generate'])) {
 		$password='';
-		$ValidChar='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
-		while (0<$len--) {
-			$password.=$ValidChar[random_int(0, strlen($ValidChar)-1)];
-		}
-/*
-	if(isset($_POST['gen'])) {
-		$password='';
-		if(isset($_POST['pass1'])) {
-			passGenerator(6);
-		}
-		else if(isset($_POST['pass2'])) {
-			passGenerator(10);
-		}
-		else if(isset($_POST['pass3'])) {
+		if(isset($_POST['passID'])) {
+			$passlength=($_POST['passID']);
+			echo $_POST['passID'];
+			passGenerator(@$passlength);
+		} else {
 			passGenerator(12);
 		}
-		else{
-			passGenerator(8);
-		}
 	}
+
 	function passGenerator($length) {
 		global $password;
 		$ValidChar='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
@@ -28,7 +17,6 @@
 			$password.=$ValidChar[random_int(0, strlen($ValidChar)-1)];
 		}
 	}
-*/
 ?>
 
 <html>
@@ -50,7 +38,7 @@
 		<br>
 		<br>
 	</body>
-	<form>
+	<form class="" action="" method="post">
 		<label for="nameID">Input Your Name:</label><br>
 		<input type="text" id="nameID" name="nameID"><br><br>
 		<label for="emailID">Input Your E-Mail:</label><br>
@@ -74,8 +62,8 @@
 		</table>
 	</form>
 	<br>
-	<form>
-		<input type="submit" id="gen" name="gen" value="Generate Your Password">
+	<form class="" action="" method="post">
+		<input type="submit" id="generate" name="generate" value="Generate Your Password">
 	<br>
 	<br>
 	<form class="" action="" method="post">
