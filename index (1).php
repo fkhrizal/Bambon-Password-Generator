@@ -1,15 +1,34 @@
 <?php
+		$len=8;
+		$password='';
+		$ValidChar='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
+		while (0<$len--) {
+			$password.=$ValidChar[random_int(0, strlen($ValidChar)-1)];
+		}
+/*
 	if(isset($_POST['gen'])) {
-		if(isset($_POST['passID'])) {
-			passGenerator(@$passID)
+		$password='';
+		if(isset($_POST['pass1'])) {
+			passGenerator(6);
+		}
+		else if(isset($_POST['pass2'])) {
+			passGenerator(10);
+		}
+		else if(isset($_POST['pass3'])) {
+			passGenerator(12);
+		}
+		else{
+			passGenerator(8);
 		}
 	}
-	
 	function passGenerator($length) {
-		$result='';
+		global $password;
 		$ValidChar='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
-		while ()
+		while (0<$length--) {
+			$password.=$ValidChar[random_int(0, strlen($ValidChar)-1)];
+		}
 	}
+*/
 ?>
 
 <html>
@@ -43,14 +62,14 @@
 	<form>
 		<table class="center">
 			<tr>
-				<td><input type="checkbox" id="pass1" name="vehicle1" value="Bike">
-				<label for="vehicle1">Contains Special Characters</label></td>
+				<td><input type="checkbox" id="pass1" name="pass1" value="Contains Special Characters">
+				<label for="pass1">Contains Special Characters</label></td>
 				
-				<td><input type="checkbox" id="pass2" name="vehicle2" value="Car">
-				<label for="vehicle2">Contains Numbers</label></td>
+				<td><input type="checkbox" id="pass2" name="pass2" value="Contains Numbers">
+				<label for="pass2">Contains Numbers</label></td>
 				
-				<td><input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-				<label for="vehicle3">Has capitalized Letters</label></td>
+				<td><input type="checkbox" id="vehicle3" name="pass3" value="Contains Capitalized Letters">
+				<label for="pass3">Contains Capitalized Letters</label></td>
 			</tr>
 		</table>
 	</form>
@@ -59,9 +78,9 @@
 		<input type="submit" id="gen" name="gen" value="Generate Your Password">
 	<br>
 	<br>
-	<form>
+	<form class="" action="" method="post">
 		<label for="password">Your Random Password:</label><br>
-		<input type="text" id="password" name="password"><br><br>
+		<input type="text" name="password" value="<?php echo(@$password); ?>"><br><br>
 	</form>
 	<button style="display:block; margin: 0 auto" type="button"> Download Your Password </button>
 </html>
