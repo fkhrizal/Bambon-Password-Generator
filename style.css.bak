@@ -1,0 +1,64 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+      .BANNERHEADER {
+          font-size: 20px;
+          font-family: 'Segoe UI';
+          font-weight: bolder;
+          padding: 0px;
+          background-color: #58275B;
+          height: 1000;
+          text-align: center;
+          color: #fff;
+          font-size: 20pt;
+          overflow: auto;
+          
+      }
+
+      /* tampilan navigasi */
+
+      nav a {
+            font-size: 12px;
+            font-weight: 400;
+            text-decoration: none;
+            color: black;
+            font-size: 12pt;
+            background-color: transparent;
+        }
+        
+
+        nav {
+            padding: 5px;
+            text-align: right;
+            /* agar navigasi melekat pada atas ketika di scroll*/
+            position: sticky;
+            top: 0;
+        }
+        header {
+            display: inline;
+        }
+
+        li {
+            display: inline;
+            list-style-type: none;
+            margin-right: 20px;
+        }
+
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1);
+            border-radius: 0px;
+            margin: auto;
+            margin-top: 60px;
+            padding: 20px;
+            background-color: #0E153A;
+              }
+
+        .form {background-color: #3A4268;
+
+        }
+        body {
+          background-color: rgb(fff, fff, fff);
+          color: white;
+        }
+  </style>
